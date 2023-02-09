@@ -115,6 +115,9 @@ function App() {
       </div>
 
     </div>
+    <footer className="py-5 bg-warning">
+       <div className="container"><p className="m-0 text-center text-primary">Copyright &copy; OIP Website 2022</p></div>
+    </footer>
   </>);
 }
 
