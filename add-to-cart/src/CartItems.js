@@ -1,4 +1,7 @@
 //create cart component 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons"
+import './card.css'
 
 function CartItems({ cartItem, RemoveFromCart }) {
     return (
@@ -7,7 +10,7 @@ function CartItems({ cartItem, RemoveFromCart }) {
                 <div className="fw-bold">{cartItem.title}</div>
                 {cartItem.price}
             </div>
-            <button onClick={() => { RemoveFromCart(cartItem) }} className="badge bg-primary rounded-pill">x</button>
+            <button onClick={() => { RemoveFromCart(cartItem) }} id='delete'> <FontAwesomeIcon icon={faTrashAlt} /> </button>
         </li>
     )
 }

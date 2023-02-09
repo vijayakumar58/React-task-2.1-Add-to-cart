@@ -19,3 +19,7 @@ img {
 .col-lg-4 {
   text-align: center;
 }
+#delete{
+  border: none;
+  background-color: white;
+}
