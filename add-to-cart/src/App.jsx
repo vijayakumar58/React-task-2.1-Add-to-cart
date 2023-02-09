@@ -6,7 +6,7 @@ import CartItems from './CartItems';
 import { useState } from 'react';
 //step-2 create the app in add to cart , 
 function App() {
-  let products = [
+  const products = [
     {
       id: "1",
       image: "https://media.istockphoto.com/id/502129687/photo/decorative-cosmetics-for-makeup.jpg?s=1024x1024&w=is&k=20&c=wGmovDLR3scv2NWrha6VGUO82qn_cWwxBh1ljemwo-0=",
@@ -59,6 +59,7 @@ function App() {
   //using usestate method because mutate the data & add the values
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+
   let addToCart = (item) => {
     setCart([...cart, item])
     setTotal(total + item.price)
@@ -73,7 +74,7 @@ function App() {
 
 
   return (<>
-  {/* create using header */}
+    {/* create using header */}
     <header className="bg-primary py-5 mb-2">
       <div className="container px-4 px-lg-5 my-5">
         <div className="text-center text-warning">
@@ -82,16 +83,18 @@ function App() {
         </div>
       </div>
     </header>
-    {/* //step-3 create container with using column split to page in col-lg-8 is card datas , col-lg-4 is addtocard details */}
+    {/* //step-3 create container with using column split to page in col-lg-8 is card datas , 
+    col-lg-4 is addtocard details */}
     <div className="container">
       <div className="row">
         <div className="col-lg-8" >
           {/*step-4 create row inside of column using to cards split ; */}
           <div className="row">
-            {/*step-5 using CardDetails component, using map method & parent to child component datas passing to props */}
+            {/*step-5 using CardDetails component, using map method & parent to child component datas passing to props, 
+            cart={cart} this full cart values are upload the this area */}
             {
               products.map((item) => {
-                return <CardDetails item={item} handleAddToCart={addToCart}></CardDetails>
+                return <CardDetails item={item} cart={cart} handleAddToCart={addToCart}></CardDetails>
               })
             }
           </div>

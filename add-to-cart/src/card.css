@@ -1,17 +1,21 @@
-img{
-    height:250px;
+img {
+  height: 250px;
 }
+
 .on {
-    color: gold;
-  }
-  .off {
-    color: #ccc;
-  }
-  #star{
-    border: none;
-    background-color: white;
-    font-size: 30px;
-  }
-  .col-lg-4{
-    text-align: center;
-  }
+  color: gold;
+}
+
+.off {
+  color: #ccc;
+}
+
+#star {
+  border: none;
+  background-color: white;
+  font-size: 30px;
+}
+
+.col-lg-4 {
+  text-align: center;
+}

@@ -24,7 +24,7 @@ const StarRating = () => {
     );
   };
 //step-2 parent to child component datas bye via props,
-function CardDetails({item,handleAddToCart}) {  
+function CardDetails({item, cart ,handleAddToCart}) {  
     return (
         <div className="col-lg-4 mb-2">
             <div className="card" style={{width: '15rem'}}>
@@ -33,7 +33,7 @@ function CardDetails({item,handleAddToCart}) {
                         <StarRating></StarRating>
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">₹{item.price}</p>
-                        <button  onClick={()=>{handleAddToCart(item)}} className="btn btn-primary">Add to cart</button>
+                        <button disabled={cart.some((obj) => obj.id === item.id)} onClick={()=>{handleAddToCart(item)}} className="btn btn-primary">Add to cart</button>
                     </div>
             </div>
         </div>
